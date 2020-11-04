@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
- * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ * MIT License
+ * For full license information, please view the LICENSE file that was distributed with this source code.
  */
 
 namespace SprykerTest\ChecksumGenerator;
@@ -34,7 +34,7 @@ class ChecksumGeneratorTester extends Actor
     /**
      * @return \Spryker\ChecksumGenerator\Checksum\ChecksumGeneratorInterface
      */
-    public function getCrcProductConfigurationDataChecksumGenerator(): ChecksumGeneratorInterface
+    public function getCrcOpenSslChecksumGenerator(): ChecksumGeneratorInterface
     {
         return new CrcOpenSslChecksumGenerator('0c1ffefeebdab4a3d839d0e52590c9a2');
     }

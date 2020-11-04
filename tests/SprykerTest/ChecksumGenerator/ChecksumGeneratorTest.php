@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
- * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ * MIT License
+ * For full license information, please view the LICENSE file that was distributed with this source code.
  */
 
 namespace SprykerTest\ChecksumGenerator;
@@ -30,18 +30,18 @@ class ChecksumGeneratorTest extends Unit
     /**
      * @return void
      */
-    public function testGenerateProductConfigurationDataChecksumGeneratesEncodedCheckSum(): void
+    public function testGenerateChecksumGeneratesEncodedCheckSum(): void
     {
         // Arrange
-        $productConfiguration = [
+        $data = [
             'fakeKey1' => 'fakeValue1',
             'fakeKey2' => 'fakeValue2',
             'fakeKey3' => 'fakeValue3',
         ];
 
         // Act
-        $encodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($productConfiguration, static::ENCRYPTION_KEY);
+        $encodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($data, static::ENCRYPTION_KEY);
 
         // Assert
         // Assert
@@ -55,14 +55,14 @@ class ChecksumGeneratorTest extends Unit
     /**
      * @return void
      */
-    public function testGenerateProductConfigurationDataChecksumGeneratesEncodedCheckSumForEmptyConfiguration(): void
+    public function testGenerateChecksumGeneratesEncodedCheckSumForEmptyConfiguration(): void
     {
         // Arrange
-        $productConfiguration = [];
+        $data = [];
 
         // Act
-        $encodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($productConfiguration, static::ENCRYPTION_KEY);
+        $encodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($data, static::ENCRYPTION_KEY);
 
         // Assert
         $this->assertSame(
@@ -75,20 +75,20 @@ class ChecksumGeneratorTest extends Unit
     /**
      * @return void
      */
-    public function testGenerateProductConfigurationDataChecksumTryToUseAnotherEncryptionKey(): void
+    public function testGenerateChecksumTryToUseAnotherEncryptionKey(): void
     {
         // Arrange
-        $productConfiguration = [
+        $data = [
             'fakeKey1' => 'fakeValue1',
             'fakeKey2' => 'fakeValue2',
         ];
 
         // Act
-        $firstEncodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($productConfiguration, static::ENCRYPTION_KEY);
+        $firstEncodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($data, static::ENCRYPTION_KEY);
 
-        $secondEncodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($productConfiguration, static::FAKE_ENCRYPTION_KEY);
+        $secondEncodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($data, static::FAKE_ENCRYPTION_KEY);
 
         // Assert
         $this->assertNotSame(
@@ -101,20 +101,20 @@ class ChecksumGeneratorTest extends Unit
     /**
      * @return void
      */
-    public function testGenerateProductConfigurationDataChecksumCompareTwoChecksumWithSameProductConfigurations(): void
+    public function testGenerateChecksumCompareTwoChecksumWithSameProductConfigurations(): void
     {
         // Arrange
-        $productConfiguration = [
+        $data = [
             'fakeKey1' => 'fakeValue1',
             'fakeKey2' => 'fakeValue2',
         ];
 
         // Act
-        $firstEncodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($productConfiguration, static::ENCRYPTION_KEY);
+        $firstEncodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($data, static::ENCRYPTION_KEY);
 
-        $secondEncodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($productConfiguration, static::ENCRYPTION_KEY);
+        $secondEncodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($data, static::ENCRYPTION_KEY);
 
         // Assert
         $this->assertSame(
@@ -127,25 +127,25 @@ class ChecksumGeneratorTest extends Unit
     /**
      * @return void
      */
-    public function testGenerateProductConfigurationDataChecksumCompareTwoChecksumWithDifferentProductConfigurations(): void
+    public function testGenerateChecksumCompareTwoChecksumWithDifferentProductConfigurations(): void
     {
         // Arrange
-        $firstProductConfiguration = [
+        $firstData = [
             'fakeKey1' => 'fakeValue1',
             'fakeKey2' => 'fakeValue2',
         ];
 
-        $secondProductConfiguration = [
+        $secondData = [
             'fakeKey1' => 'fakeValue1',
             'fakeKey2' => 'differentFakeValue2',
         ];
 
         // Act
-        $firstEncodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($firstProductConfiguration, static::ENCRYPTION_KEY);
+        $firstEncodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($firstData, static::ENCRYPTION_KEY);
 
-        $secondEncodedCheckSum = $this->tester->getCrcProductConfigurationDataChecksumGenerator()
-            ->generateChecksum($secondProductConfiguration, static::ENCRYPTION_KEY);
+        $secondEncodedCheckSum = $this->tester->getCrcOpenSslChecksumGenerator()
+            ->generateChecksum($secondData, static::ENCRYPTION_KEY);
 
         // Assert
         $this->assertNotSame(
