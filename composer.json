@@ -1,7 +1,7 @@
 {
   "name": "spryker/checksum-generator",
   "type": "library",
-  "description": "ChecksumGenerator module",
+  "description": "ChecksumGenerator",
   "license": "proprietary",
   "require": {
     "ext-openssl": "*",
