@@ -2,7 +2,7 @@
   "name": "spryker/checksum-generator",
   "type": "library",
   "description": "ChecksumGenerator",
-  "license": "proprietary",
+  "license": "MIT",
   "require": {
     "ext-openssl": "*",
     "php": ">=7.3"
