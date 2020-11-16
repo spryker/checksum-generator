@@ -8,6 +8,7 @@
     "php": ">=7.3"
   },
   "require-dev": {
+    "phpstan/phpstan": "^0.12",
     "spryker/code-sniffer": "*"
   },
   "autoload": {
@@ -23,6 +24,8 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
+    "test": "codecept run",
+    "stan": "phpstan analyze -l8 src/",
     "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/",
     "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/"
   },
