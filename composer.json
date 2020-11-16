@@ -8,6 +8,7 @@
     "php": ">=7.3"
   },
   "require-dev": {
+    "phpunit/phpunit": "^8.0.0 || ^9.0.0",
     "spryker/code-sniffer": "*"
   },
   "autoload": {
@@ -23,6 +24,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
+    "test": "phpunit",
     "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/",
     "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/"
   },
