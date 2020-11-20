@@ -5,10 +5,10 @@
   "license": "MIT",
   "require": {
     "php": ">=7.3",
-    "ext-openssl": "*",
-    "codeception/codeception": "^4.1"
+    "ext-openssl": "*"
   },
   "require-dev": {
+    "codeception/codeception": "^4.1",
     "phpstan/phpstan": "^0.12",
     "spryker/code-sniffer": "*"
   },
