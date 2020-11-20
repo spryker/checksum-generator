@@ -4,10 +4,11 @@
   "description": "ChecksumGenerator",
   "license": "MIT",
   "require": {
-    "ext-openssl": "*",
-    "php": ">=7.3"
+    "php": ">=7.3",
+    "ext-openssl": "*"
   },
   "require-dev": {
+    "codeception/codeception": "^4.1",
     "phpstan/phpstan": "^0.12",
     "spryker/code-sniffer": "*"
   },
