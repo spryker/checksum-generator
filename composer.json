@@ -4,8 +4,9 @@
   "description": "ChecksumGenerator",
   "license": "MIT",
   "require": {
+    "php": ">=7.3",
     "ext-openssl": "*",
-    "php": ">=7.3"
+    "codeception/codeception": "^4.1"
   },
   "require-dev": {
     "phpstan/phpstan": "^0.12",

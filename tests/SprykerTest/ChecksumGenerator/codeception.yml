@@ -15,6 +15,3 @@ suites:
     Service:
         path: .
         class_name: ChecksumGeneratorTester
-        modules:
-            enabled:
-                - Asserts
