@@ -21,6 +21,12 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl, pdo_mysql
+
       - name: Validate composer.json and composer.lock
         run: composer validate
 
@@ -41,14 +47,18 @@ jobs:
           composer --version
           composer install --optimize-autoloader
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, intl, pdo_mysql
+      - name: Codeception tests
+        run: |
+          if [[ ${{ matrix.php-version }} == '7.4' ]]; then
+            vendor/bin/codecept build
+            XDEBUG_MODE=coverage vendor/bin/codecept run --coverage-xml
+          else
+            composer test
+          fi
 
-      - name: Codecept run
-        run: composer test
+      - name: Code Coverage Report
+        if: success() && matrix.php-version == '7.4'
+        uses: codecov/codecov-action@v1
 
       - name: CodeStyle checks
         run: composer cs-check
