@@ -1,9 +1,14 @@
 name: CI
 
-on: [
-    push,
-    pull_request
-]
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *"
+      branches:
+        - 'master'
 
 jobs:
   validation:
@@ -12,8 +17,8 @@ jobs:
       fail-fast: false
       matrix:
         php-version: [
-            '7.4',
-            'nightly'
+            '7.3',
+            '7.4'
         ]
 
     steps:
