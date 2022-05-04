@@ -2,5 +2,4 @@ parameters:
     level: 8
     checkMissingIterableValueType: false
     ignoreErrors:
-        - '#Parameter \#1 \$str of function base64_encode expects string, string\|false given.#'
         - '#Parameter \#5 \$iv of function openssl_encrypt expects string, string\|false given.#'

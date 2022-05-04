@@ -45,7 +45,7 @@ class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
     {
         $dataCheckSum = $this->prepareDataCheckSum($data);
 
-        $encryptedCheckSum = $this->encrypt((string)$dataCheckSum, $encryptionKey);
+        $encryptedCheckSum = (string)$this->encrypt((string)$dataCheckSum, $encryptionKey);
 
         return base64_encode($encryptedCheckSum);
     }
