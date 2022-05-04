@@ -19,7 +19,14 @@ use Codeception\Test\Unit;
  */
 class ChecksumGeneratorTest extends Unit
 {
+    /**
+     * @var string
+     */
     protected const ENCRYPTION_KEY = 'change123';
+
+    /**
+     * @var string
+     */
     protected const FAKE_ENCRYPTION_KEY = 'fake_encryption_key';
 
     /**
@@ -48,7 +55,7 @@ class ChecksumGeneratorTest extends Unit
         $this->assertSame(
             32,
             mb_strlen($encodedCheckSum),
-            'Expects that string length will be equal to the predefined value (32).'
+            'Expects that string length will be equal to the predefined value (32).',
         );
     }
 
@@ -68,7 +75,7 @@ class ChecksumGeneratorTest extends Unit
         $this->assertSame(
             32,
             mb_strlen($encodedCheckSum),
-            'Expects that string length will be equal to the predefined value (32).'
+            'Expects that string length will be equal to the predefined value (32).',
         );
     }
 
@@ -94,7 +101,7 @@ class ChecksumGeneratorTest extends Unit
         $this->assertNotSame(
             $firstEncodedCheckSum,
             $secondEncodedCheckSum,
-            'Expects different checksum will be generated.'
+            'Expects different checksum will be generated.',
         );
     }
 
@@ -120,7 +127,7 @@ class ChecksumGeneratorTest extends Unit
         $this->assertSame(
             $firstEncodedCheckSum,
             $secondEncodedCheckSum,
-            'Expects equal checksum values when same data.'
+            'Expects equal checksum values when same data.',
         );
     }
 
@@ -151,7 +158,7 @@ class ChecksumGeneratorTest extends Unit
         $this->assertNotSame(
             $firstEncodedCheckSum,
             $secondEncodedCheckSum,
-            'Expects not equal checksum values with different data.'
+            'Expects not equal checksum values with different data.',
         );
     }
 }
