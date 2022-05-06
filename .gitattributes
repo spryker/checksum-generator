@@ -23,7 +23,6 @@
 # Remove files for archives generated using `git archive`
 codeception.yml export-ignore
 dependency.json export-ignore
-phpstan.json export-ignore
 phpstan.neon export-ignore
 tooling.yml export-ignore
 .coveralls.yml export-ignore
@@ -31,3 +30,4 @@ tooling.yml export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
+.github/ export-ignore
