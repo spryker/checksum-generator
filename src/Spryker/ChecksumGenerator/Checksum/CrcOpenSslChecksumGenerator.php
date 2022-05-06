@@ -9,6 +9,9 @@ namespace Spryker\ChecksumGenerator\Checksum;
 
 class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
 {
+    /**
+     * @var string
+     */
     protected const ENCRYPTION_METHOD = 'aes256';
 
     /**
@@ -60,7 +63,7 @@ class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
             static::ENCRYPTION_METHOD,
             $encryptionKey,
             0,
-            $this->getInitializationVector()
+            $this->getInitializationVector(),
         );
     }
 
