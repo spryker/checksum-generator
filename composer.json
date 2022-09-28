@@ -9,7 +9,7 @@
     },
     "require-dev": {
         "codeception/codeception": "^4.1",
-        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan": "^1.2.0",
         "spryker/code-sniffer": "*"
     },
     "autoload": {
@@ -26,9 +26,9 @@
     "prefer-stable": true,
     "scripts": {
         "test": "codecept run",
-        "stan": "phpstan analyze -l8 src/",
-        "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/",
-        "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/"
+        "stan": "phpstan analyze",
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf"
     },
     "extra": {
         "branch-alias": {

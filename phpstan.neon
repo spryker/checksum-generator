@@ -1,5 +1,7 @@
 parameters:
     level: 8
+    paths:
+        - src/
     checkMissingIterableValueType: false
     ignoreErrors:
         - '#Parameter \#5 \$iv of function openssl_encrypt expects string, string\|false given.#'
