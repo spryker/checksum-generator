@@ -25,7 +25,7 @@ use Spryker\ChecksumGenerator\Checksum\CrcOpenSslChecksumGenerator;
  * @method void comment($description)
  * @method \Codeception\Lib\Friend haveFriend($name, $actorClass = NULL)
  *
- * @SuppressWarnings(PHPMD)
+ * @SuppressWarnings(\SprykerTest\ChecksumGenerator\PHPMD)
  */
 class ChecksumGeneratorTester extends Actor
 {
