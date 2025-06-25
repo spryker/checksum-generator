@@ -8,10 +8,10 @@
         "ext-openssl": "*"
     },
     "require-dev": {
-        "codeception/codeception": "^5.2.2",
-        "phpstan/phpstan": "^1.2.0",
+        "codeception/codeception": "*",
+        "phpstan/phpstan": "*",
         "spryker/code-sniffer": "*",
-        "symfony/yaml": "^5.4.24"
+        "symfony/yaml": "*",
     },
     "autoload": {
         "psr-4": {
