@@ -22,6 +22,12 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl, pdo_mysql
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -38,12 +44,6 @@ jobs:
         run: |
           composer --version
           composer install --optimize-autoloader
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, intl, pdo_mysql
 
       - name: Codecept run
         run: composer test
@@ -69,6 +69,12 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl, pdo_mysql
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -83,12 +89,6 @@ jobs:
 
       - name: Composer prefer lowest
         run: composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, intl, pdo_mysql
 
       - name: Codecept run
         run: composer test
