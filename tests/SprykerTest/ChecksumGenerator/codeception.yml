@@ -14,4 +14,7 @@ coverage:
 suites:
     Service:
         path: .
-        class_name: ChecksumGeneratorTester
+        actor: ChecksumGeneratorTester
+        modules:
+            enabled:
+                - Asserts
