@@ -9,6 +9,7 @@
     },
     "require-dev": {
         "codeception/codeception": "*",
+        "codeception/module-asserts": "*",
         "phpstan/phpstan": "*",
         "spryker/code-sniffer": "*",
         "symfony/yaml": "*"
