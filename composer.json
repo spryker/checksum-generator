@@ -11,7 +11,7 @@
         "codeception/codeception": "*",
         "phpstan/phpstan": "*",
         "spryker/code-sniffer": "*",
-        "symfony/yaml": "*",
+        "symfony/yaml": "*"
     },
     "autoload": {
         "psr-4": {
