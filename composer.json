@@ -10,7 +10,7 @@
     "require-dev": {
         "codeception/codeception": "^5.0.8",
         "codeception/module-asserts": "^3.0.0",
-        "phpstan/phpstan": "*",
+        "phpstan/phpstan": "1.10.60",
         "spryker/code-sniffer": "*",
         "symfony/yaml": "^6.0.0"
     },
