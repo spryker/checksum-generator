@@ -32,7 +32,7 @@ class ChecksumGeneratorTest extends Unit
     /**
      * @var \SprykerTest\ChecksumGenerator\ChecksumGeneratorTester
      */
-    protected $tester;
+    protected ChecksumGeneratorTester $tester;
 
     /**
      * @return void
