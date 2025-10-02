@@ -4,13 +4,13 @@
     "description": "ChecksumGenerator",
     "license": "MIT",
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ext-openssl": "*"
     },
     "require-dev": {
         "codeception/codeception": "^5.0.8",
         "codeception/module-asserts": "^3.0.0",
-        "phpstan/phpstan": "1.10.60",
+        "phpstan/phpstan": "1.11.0",
         "spryker/code-sniffer": "*",
         "symfony/yaml": "^6.0.0"
     },

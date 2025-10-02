@@ -58,12 +58,15 @@ class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
      */
     protected function encrypt(string $dataCheckSum, string $encryptionKey)
     {
+        /** @var string $initializationVector */
+        $initializationVector = $this->getInitializationVector();
+
         return openssl_encrypt(
             $dataCheckSum,
             static::ENCRYPTION_METHOD,
             $encryptionKey,
             0,
-            $this->getInitializationVector(),
+            $initializationVector,
         );
     }
 
