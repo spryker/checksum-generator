@@ -31,9 +31,6 @@ class ChecksumGeneratorTester extends Actor
 {
     use _generated\ChecksumGeneratorTesterActions;
 
-    /**
-     * @return \Spryker\ChecksumGenerator\Checksum\ChecksumGeneratorInterface
-     */
     public function getCrcOpenSslChecksumGenerator(): ChecksumGeneratorInterface
     {
         return new CrcOpenSslChecksumGenerator('0c1ffefeebdab4a3d839d0e52590c9a2');

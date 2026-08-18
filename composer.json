@@ -12,7 +12,7 @@
         "codeception/module-asserts": "^3.0.0",
         "phpstan/phpstan": "2.1.0",
         "spryker/code-sniffer": "*",
-        "symfony/yaml": "^6.0.0"
+        "symfony/yaml": "^6.0.0 || ^7.0.0"
     },
     "autoload": {
         "psr-4": {

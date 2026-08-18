@@ -29,14 +29,8 @@ class ChecksumGeneratorTest extends Unit
      */
     protected const FAKE_ENCRYPTION_KEY = 'fake_encryption_key';
 
-    /**
-     * @var \SprykerTest\ChecksumGenerator\ChecksumGeneratorTester
-     */
     protected ChecksumGeneratorTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGenerateChecksumGeneratesEncodedCheckSum(): void
     {
         // Arrange
@@ -59,9 +53,6 @@ class ChecksumGeneratorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateChecksumGeneratesEncodedCheckSumForEmptyConfiguration(): void
     {
         // Arrange
@@ -79,9 +70,6 @@ class ChecksumGeneratorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateChecksumTryToUseAnotherEncryptionKey(): void
     {
         // Arrange
@@ -105,9 +93,6 @@ class ChecksumGeneratorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateChecksumCompareTwoChecksumWithSameProductConfigurations(): void
     {
         // Arrange
@@ -131,9 +116,6 @@ class ChecksumGeneratorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateChecksumCompareTwoChecksumWithDifferentProductConfigurations(): void
     {
         // Arrange
