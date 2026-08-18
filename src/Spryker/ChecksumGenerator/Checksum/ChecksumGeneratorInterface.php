@@ -17,10 +17,7 @@ interface ChecksumGeneratorInterface
      * - Encodes encrypted checksum.
      * - Returns the encoded checksum.
      *
-     * @param array $data
-     * @param string $encryptionKey
-     *
-     * @return string
+     * @param array<string, string> $data
      */
     public function generateChecksum(array $data, string $encryptionKey): string;
 }

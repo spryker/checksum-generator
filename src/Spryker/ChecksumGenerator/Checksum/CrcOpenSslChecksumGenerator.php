@@ -19,9 +19,6 @@ class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
      */
     protected $hexInitializationVector;
 
-    /**
-     * @param string $hexInitializationVector
-     */
     public function __construct(string $hexInitializationVector)
     {
         $this->hexInitializationVector = $hexInitializationVector;
@@ -51,9 +48,6 @@ class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
     }
 
     /**
-     * @param string $dataCheckSum
-     * @param string $encryptionKey
-     *
      * @return string|false
      */
     protected function encrypt(string $dataCheckSum, string $encryptionKey)
@@ -70,11 +64,6 @@ class CrcOpenSslChecksumGenerator implements ChecksumGeneratorInterface
         );
     }
 
-    /**
-     * @param array $data
-     *
-     * @return int
-     */
     protected function prepareDataCheckSum(array $data): int
     {
         $serializedData = serialize($data);
